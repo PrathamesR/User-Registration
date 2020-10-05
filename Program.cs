@@ -13,7 +13,7 @@ namespace UserRegistration
         static bool RegisterUser()
         {
             //Use Case 1
-            Console.Write("Enter Valid First Name");
+            Console.Write("Enter Valid First Name: ");
             string name=Console.ReadLine();
             if (!Regex.IsMatch(name, "[A-Z][a-z]{3,}"))
             {
