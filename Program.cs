@@ -15,7 +15,7 @@ namespace UserRegistration
             //Use Case 1
             Console.Write("Enter Valid First Name: ");
             string name = Console.ReadLine();
-            if (!Regex.IsMatch(name, "[A-Z][A-Za-z]{2,}"))
+            if (!Regex.IsMatch(name, "^[A-Z][A-Za-z]{2,}$"))
             {
                 Console.WriteLine("First Name must start with Capital Letter and have atleast 3 letters");
                 return false;
@@ -24,12 +24,20 @@ namespace UserRegistration
             // Use Case 2
             Console.Write("Enter Valid Last Name: ");
             string lname = Console.ReadLine();
-            if (!Regex.IsMatch(lname, "[A-Z][A-Za-z]{2,}"))
+            if (!Regex.IsMatch(lname, "^[A-Z][A-Za-z]{2,}$"))
             {
                 Console.WriteLine("Last Name must start with Capital Letter and have atleast 3 letters");
                 return false;
             }
 
+            // Use Case 3
+            Console.Write("Enter Valid Email Address: ");
+            string mail = Console.ReadLine();
+            if (!Regex.IsMatch(mail, "^[A-Za-z]([A-Za-z0-9]+\\.{0,1})*@[a-z]+(\\.[a-z]{2,4})+(\\.[a-z]{2}){0,1}"))
+            {
+                Console.WriteLine("Invalid email format");
+                return false;
+            }
 
             return true;
         }
