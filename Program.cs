@@ -39,6 +39,15 @@ namespace UserRegistration
                 return false;
             }
 
+            //Use Case 4
+            Console.Write("Enter Valid Phone Number: ");
+            string pno = Console.ReadLine();
+            if (!Regex.IsMatch(pno, "^[0-9]{2} [0-9]{10}$"))
+            {
+                Console.WriteLine("The number should be Country code follow by space and 10 digit number");
+                return false;
+            }
+
             return true;
         }
 
