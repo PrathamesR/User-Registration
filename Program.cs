@@ -48,6 +48,15 @@ namespace UserRegistration
                 return false;
             }
 
+            //Use Case 5
+            Console.Write("Enter Valid Password: ");
+            string pass = Console.ReadLine();
+            if (!Regex.IsMatch(pass, "^.{8,}$"))
+            {
+                Console.WriteLine("The password should contain minimum 8 characters");
+                return false;
+            }
+
             return true;
         }
 
