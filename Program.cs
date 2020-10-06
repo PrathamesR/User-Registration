@@ -33,7 +33,7 @@ namespace UserRegistration
             // Use Case 3
             Console.Write("Enter Valid Email Address: ");
             string mail = Console.ReadLine();
-            if (!Regex.IsMatch(mail, "^[A-Za-z]([A-Za-z0-9]+\\.{0,1})*@[a-z]+(\\.[a-z]{2,4})+(\\.[a-z]{2}){0,1}"))
+            if (!Regex.IsMatch(mail, @"^[A-Za-z]([A-Za-z0-9]+\.{0,1}[\-\+\*\!\_]*)*[a-zA-Z0-9]+@[a-z0-9]+(\.[a-z]{2,4})(\.[a-z]{2,4}){0,1}"))
             {
                 Console.WriteLine("Invalid email format");
                 return false;
