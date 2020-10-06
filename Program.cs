@@ -51,7 +51,7 @@ namespace UserRegistration
             //Use Case 6
             Console.Write("Enter Valid Password: ");
             string pass = Console.ReadLine();
-            if (!Regex.IsMatch(pass, "^(?=.*[A-Z]).{8,}$"))
+            if (!Regex.IsMatch(pass, "^(?=.*[A-Z])(?=.*[0-9]).{8,}$"))
             {
                 Console.WriteLine("The password should contain minimum 8 characters and a Capital Letter");
                 return false;
