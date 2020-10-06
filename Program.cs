@@ -42,21 +42,22 @@ namespace UserRegistration
             //Use Case 4
             Console.Write("Enter Valid Phone Number: ");
             string phoneNo = Console.ReadLine();
-            if (!Regex.IsMatch(phoneNo, "^[0-9]{2} [0-9]{10}$"))
+            if (!Regex.IsMatch(phoneNo, "^\\+{0,1}[0-9]{2} [0-9]{10}$"))
             {
                 Console.WriteLine("The number should be Country code follow by space and 10 digit number");
                 return false;
             }
 
-            //Use Case 6
+            //Use Case 8
             Console.Write("Enter Valid Password: ");
             string pass = Console.ReadLine();
-            if (!Regex.IsMatch(pass, "^(?=.*[A-Z])(?=.*[0-9]).{8,}$"))
+            if (!Regex.IsMatch(pass, @"^(^(?=.{8,}$))(?=.*[A-Z])(?=.*[0-9])(^[a-zA-Z0-9]*[!@#$^&*()\-+=]{1}[a-zA-Z0-9]*$)"))
             {
-                Console.WriteLine("The password should contain minimum 8 characters and a Capital Letter");
+                Console.WriteLine("The password should contain minimum 8 characters and a Capital Letter and exactly 1 special character");
                 return false;
             }
-
+            
+            Console.WriteLine("\nUser Details-\nName:"+name+" "+lname+" Mail: "+mail+" Password: "+pass+"\n");
             return true;
         }
 
