@@ -41,19 +41,19 @@ namespace UserRegistration
 
             //Use Case 4
             Console.Write("Enter Valid Phone Number: ");
-            string pno = Console.ReadLine();
-            if (!Regex.IsMatch(pno, "^[0-9]{2} [0-9]{10}$"))
+            string phoneNo = Console.ReadLine();
+            if (!Regex.IsMatch(phoneNo, "^[0-9]{2} [0-9]{10}$"))
             {
                 Console.WriteLine("The number should be Country code follow by space and 10 digit number");
                 return false;
             }
 
-            //Use Case 5
+            //Use Case 6
             Console.Write("Enter Valid Password: ");
             string pass = Console.ReadLine();
-            if (!Regex.IsMatch(pass, "^.{8,}$"))
+            if (!Regex.IsMatch(pass, "^(?=.*[A-Z]).{8,}$"))
             {
-                Console.WriteLine("The password should contain minimum 8 characters");
+                Console.WriteLine("The password should contain minimum 8 characters and a Capital Letter");
                 return false;
             }
 
