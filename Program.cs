@@ -9,15 +9,22 @@ namespace UserRegistration
 {
     class Program
     {
-        public static string GetDetail(string pattern, string wxceptionMsg)
+        public static string GetDetail(string pattern, string ExceptionMsg)
         {
             try
             {
-                string val = Console.ReadLine();
-                if (Regex.IsMatch(val, pattern))
-                    return val;
-                else
-                    throw new UserDetailException(wxceptionMsg); 
+                String value = Console.ReadLine();
+
+                Func<string, string, string> checkRegex = (input, patt) =>
+                {
+                    if (Regex.IsMatch(input, patt))
+                        return input;
+                    else
+                        throw new UserDetailException(ExceptionMsg);
+                };
+
+                return checkRegex(value, pattern);
+                
             }
             catch(Exception e)
             {
@@ -68,7 +75,6 @@ namespace UserRegistration
 
             if (RegisterUser())
                 Console.WriteLine("User Registered successfully");
-
 
             //Temp Read Line to view console
             Console.ReadLine();
