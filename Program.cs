@@ -9,6 +9,13 @@ namespace UserRegistration
 {
     class Program
     {
+
+        /// <summary>
+        /// Gets the user details and performs Regex validation.
+        /// </summary>
+        /// <param name="pattern">The pattern.</param>
+        /// <param name="ExceptionMsg">The exception message.</param>
+        /// <returns></returns>
         public static string GetDetail(string pattern, string ExceptionMsg)
         {
             try
@@ -33,6 +40,11 @@ namespace UserRegistration
             }
         }
 
+
+        /// <summary>
+        /// Registers the user.
+        /// </summary>
+        /// <returns></returns>
         static bool RegisterUser()
         {
             //Use Case 1
